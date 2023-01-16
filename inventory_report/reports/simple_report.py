@@ -9,10 +9,13 @@ class SimpleReport:
         lista_empresas = [item["nome_da_empresa"] for item in data]
         contador_de_empresa = Counter(lista_empresas)
         produto = contador_de_empresa.most_common(1)[0][0]
+        # most_common() retorna uma lista dos principais 'n' elementos
+        # do mais comum ao menos comum, conforme especificado no parâmetro 'n'.
 
         # fabricacao mais antiga
         fabricado_data = [item["data_de_fabricacao"] for item in data]
         fabricacao_mais_velha = min(fabricado_data)
+        # min() pega a data mais velha
 
         # validade mais proxima
         hoje = date.today()
